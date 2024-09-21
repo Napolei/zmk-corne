@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include "keys_de.h"
@@ -15,56 +9,110 @@
 #include "zmk-helpers/unicode-chars/german.dtsi"
 #include "zmk-helpers/unicode-chars/french.dtsi"
 
-/ {
-    combos {
-        compatible = "zmk,combos";
+// https://github.com/urob/zmk-config
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                  // thumbs
 
-        combo_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-        };
-    };
+#define ___ &trans
 
-    keymap {
-        compatible = "zmk,keymap";
+#define DEF 0
+#define NUM 1
+#define SYM 2
+#define FUN 3
 
-        default_layer {
-            display-name = "base";
+ZMK_HOLD_TAP(hml,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&kp>;
+)
 
-            bindings = <
-&kp TAB     &kp DE_Q    &kp DE_W    &kp DE_E    &kp DE_R    &kp DE_T                &kp DE_Z   &kp DE_U    &kp DE_I    &kp DE_O        &kp DE_P        &kp BSPC
-&kp LSHFT   &kp DE_A    &kp DE_S    &kp DE_D    &kp DE_F    &kp DE_G                &kp DE_H   &kp DE_J    &kp DE_K    &kp DE_L        &kp UP_ARROW    &kp DELETE
-&kp LCTRL   &mo 1       &kp DE_Y    &kp DE_X    &kp DE_C    &kp DE_V                &kp DE_B   &kp DE_N    &kp DE_M    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+ZMK_HOLD_TAP(hmr,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&kp>;
+)
 
-                                    &kp LEFT_ALT  &mo 1     &kp ENTER               &kp SPACE   &mo 2       &kp LEFT_ALT
-            >;
-        };
+ZMK_LAYER(default_layer,
+ // ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
+        &kp TAB         &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &kp BSPC
+ // ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
+        &kp LSHFT       &hrm LGUI DE_A      &hml LALT DE_S      &hml LCTRL DE_D     &hml LSHFT DE_F     &kp DE_G                    &kp DE_H        &hmr RSHFT DE_J     &hmr LCTRL DE_K     &hmr LALT DE_L      &hmr LGUI UP_ARROW  &kp DELETE
+ // ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
+        &kp LCTRL       ___                 &kp DE_Y            &kp DE_X            &kp DE_C            &kp DE_V                    &kp DE_B        &kp DE_N            &kp DE_M            &kp LEFT_ARROW      &kp DOWN_ARROW      &kp RIGHT_ARROW
+ // ╰─────────────────────────────────────────────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────╯
+                                                                &lt NUM ESCAPE      &lt SYM SPACE       &kp SYM ENTER               &kp Enter       &lt SYM SPACE       &lt FUN ESCAPE
+ //                                                           ╰───────────────────┴──────────────────┴─────────────────╯        ╰─────────────────┴───────────────────┴───────────────────╯
+)
 
-        number_layer {
-            display-name = "numbers";
+ZMK_LAYER(number_layer,
+ // ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
+        ___             &kp DE_A_UMLAUT     &kp DE_O_UMLAUT     &kp DE_U_UMLAUT     &kp DE_ACUTE        &kp DE_GRAVE                &kp DE_N7       &kp DE_N8           &kp DE_N9           &kp DE_PLUS         &none               ___
+ // ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
+        ___             &hrm LGUI DE_AT_SIGN &hml LALT DE_EURO  ___                 ___                 &kp DE_G                    &kp DE_N7       &hmr RSHFT DE_N8    &hmr LCTRL DE_N9   &hmr LALT DE_PLUS &hmr LGUI UP_ARROW     ___
+ // ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
+        ___             &kp DE_PIPE         &kp DE_TILDE        ___                 ___                 ___                         &kp DE_B        &kp DE_N            &kp DE_M            &kp LEFT_ARROW      ___                 ___
+ // ╰─────────────────────────────────────────────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────╯
+                                                                ___                 ___                 ___                         ___             ___                 &lt DE_N0
+ //                                                           ╰───────────────────┴──────────────────┴─────────────────╯        ╰─────────────────┴───────────────────┴───────────────────╯
+)
 
-            bindings = <
-&kp TAB         &kp DE_A_UMLAUT     &kp DE_O_UMLAUT     &kp DE_U_UMLAUT &kp DE_ACUTE    &kp DE_GRAVE                &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp DE_PLUS        &none           &kp BSPC
-&kp LEFT_SHIFT  &kp DE_AT_SIGN      &kp DE_EURO         &none           &none           &none                       &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_MINUS       &kp UP_ARROW    &kp DELETE
-&kp LCTRL       &kp DE_PIPE         &kp DE_TILDE        &none           &none           &none                       &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW
-
-                                                        &kp LGUI        &trans          &kp ENTER                   &kp SPACE   &kp DE_N0  &kp DE_COMMA
-            >;
-        };
-
-        symbol_layer {
-            display-name = "symbols";
-
-            bindings = <
-&kp TAB    &kp DE_CARET         &kp DE_DOUBLE_QUOTES    &kp DE_AMPERSAND    &kp DE_DOLLAR       &kp DE_PERCENT          &kp DE_EXCLAMATION  &kp DE_SLASH    &kp AMPS            &kp DE_LEFT_PARENTHESIS     &kp DE_RIGHT_PARENTHESIS    &kp BSPC
-&kp LCTRL  &kp DE_AMPERSAND     &kp DE_SLASH            &none               &none               &none                   &kp DE_QUESTION     &kp EQUAL       &kp DE_HASH         &kp DE_LEFT_BRACKET         &kp DE_RIGHT_BRACKET        &kp DELETE
-&kp LSHFT  &kp DE_LESS_THAN     &kp DE_GREATER_THAN     &kp DE_SLASH        &kp DE_BACKSLASH    &none                   &kp DE_UNDERSCORE   &kp PLUS        &kp DE_ASTERISK     &kp DE_LEFT_BRACE           &kp DE_RIGHT_BRACE          &kp TILDE
-
-                                                        &kp LGUI            &trans              &kp SPACE               &kp RET    &trans     &kp RALT
-            >;
-        };
-    };
-};
+/// {
+//    combos {
+//        compatible = "zmk,combos";
+//
+//        combo_escape {
+//            bindings = <&kp ESCAPE>;
+//            key-positions = <0 1>;
+//        };
+//    };
+//
+//    keymap {
+//        compatible = "zmk,keymap";
+//
+//        default_layer {
+//            display-name = "base";
+//
+//            bindings = <
+//&kp TAB     &kp DE_Q    &kp DE_W    &kp DE_E    &kp DE_R    &kp DE_T                &kp DE_Z   &kp DE_U    &kp DE_I    &kp DE_O        &kp DE_P        &kp BSPC
+//&kp LSHFT   &kp DE_A    &kp DE_S    &kp DE_D    &kp DE_F    &kp DE_G                &kp DE_H   &kp DE_J    &kp DE_K    &kp DE_L        &kp UP_ARROW    &kp DELETE
+//&kp LCTRL   &mo 1       &kp DE_Y    &kp DE_X    &kp DE_C    &kp DE_V                &kp DE_B   &kp DE_N    &kp DE_M    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+//
+//                                    &kp LEFT_ALT  &mo 1     &kp ENTER               &kp SPACE   &mo 2       &kp LEFT_ALT
+//            >;
+//        };
+//
+//        number_layer {
+//            display-name = "numbers";
+//
+//            bindings = <
+//&kp TAB         &kp DE_A_UMLAUT     &kp DE_O_UMLAUT     &kp DE_U_UMLAUT &kp DE_ACUTE    &kp DE_GRAVE                &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp DE_PLUS        &none           &kp BSPC
+//&kp LEFT_SHIFT  &kp DE_AT_SIGN      &kp DE_EURO         &none           &none           &none                       &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_MINUS       &kp UP_ARROW    &kp DELETE
+//&kp LCTRL       &kp DE_PIPE         &kp DE_TILDE        &none           &none           &none                       &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW
+//
+//                                                        &kp LGUI        &trans          &kp ENTER                   &kp SPACE   &kp DE_N0  &kp DE_COMMA
+//            >;
+//        };
+//
+//        symbol_layer {
+//            display-name = "symbols";
+//
+//            bindings = <
+//&kp TAB    &kp DE_CARET         &kp DE_DOUBLE_QUOTES    &kp DE_AMPERSAND    &kp DE_DOLLAR       &kp DE_PERCENT          &kp DE_EXCLAMATION  &kp DE_SLASH    &kp AMPS            &kp DE_LEFT_PARENTHESIS     &kp DE_RIGHT_PARENTHESIS    &kp BSPC
+//&kp LCTRL  &kp DE_AMPERSAND     &kp DE_SLASH            &none               &none               &none                   &kp DE_QUESTION     &kp EQUAL       &kp DE_HASH         &kp DE_LEFT_BRACKET         &kp DE_RIGHT_BRACKET        &kp DELETE
+//&kp LSHFT  &kp DE_LESS_THAN     &kp DE_GREATER_THAN     &kp DE_SLASH        &kp DE_BACKSLASH    &none                   &kp DE_UNDERSCORE   &kp PLUS        &kp DE_ASTERISK     &kp DE_LEFT_BRACE           &kp DE_RIGHT_BRACE          &kp TILDE
+//
+//                                                        &kp LGUI            &trans              &kp SPACE               &kp RET    &trans     &kp RALT
+//            >;
+//        };
+//    };
+//};
 
 &led_strip { chain-length = <27>; };
 
