@@ -45,7 +45,7 @@ ZMK_HOLD_TAP(hmr,
 ZMK_COMBO(escape,       &kp ESCAPE, LT3 LT4, ALL)
 ZMK_COMBO(tab,          &kp TAB,    LM3 LM4, ALL)
 ZMK_COMBO(backspace,    &kp BSPC,   RT3 RT4, ALL)
-ZMK_COMBO(delete,       &kp DELETE, RM4 RM5, ALL)
+ZMK_COMBO(delete,       &kp DELETE, RM3 RM4, ALL)
 
 ZMK_COMBO(cut,    &kp LC(DE_X), LB2 LB3, ALL)
 ZMK_COMBO(copy,   &kp LC(DE_C), LB1 LB2, ALL)
@@ -53,9 +53,9 @@ ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
-        &kp ESCAPE      &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &kp BSPC
+        &none           &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &none
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
-        &kp TAB         &hml LGUI DE_A      &hml LALT DE_S      &hml LCTRL DE_D     &hml LSHFT DE_F     &kp DE_G                    &kp DE_H        &hmr RSHFT DE_J     &hmr LCTRL DE_K     &hmr LALT DE_L      &hmr LGUI UP_ARROW  &kp DELETE
+        &none           &hml LGUI DE_A      &hml LALT DE_S      &hml LCTRL DE_D     &hml LSHFT DE_F     &kp DE_G                    &kp DE_H        &hmr RSHFT DE_J     &hmr LCTRL DE_K     &hmr LALT DE_L      &hmr LGUI UP_ARROW  &none
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
         &none           &none               &kp DE_Y            &kp DE_X            &kp DE_C            &kp DE_V                    &kp DE_B        &kp DE_N            &kp DE_M            &kp LEFT_ARROW      &kp DOWN_ARROW      &kp RIGHT_ARROW
 //  ╰─────────────────────────────────────────────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────╯
