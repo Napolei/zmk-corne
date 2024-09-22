@@ -42,14 +42,14 @@ ZMK_HOLD_TAP(hmr,
 
 
 // combos
-ZMK_COMBO(escape,       &kp ESCAPE, LT4 LT5, ALL)
-ZMK_COMBO(tab,          &kp TAB,    LM4 LM5, ALL)
-ZMK_COMBO(backspace,    &kp BSPC,   RT4 RT5, ALL)
+ZMK_COMBO(escape,       &kp ESCAPE, LT3 LT4, ALL)
+ZMK_COMBO(tab,          &kp TAB,    LM3 LM4, ALL)
+ZMK_COMBO(backspace,    &kp BSPC,   RT3 RT4, ALL)
 ZMK_COMBO(delete,       &kp DELETE, RM4 RM5, ALL)
 
-ZMK_COMBO(cut,    &kp LC(LB2), LB2 LB3, ALL)
-ZMK_COMBO(copy,   &kp LC(LB1), LB1 LB2, ALL)
-ZMK_COMBO(paste,  &kp LC(LB0), LB0 LB1, ALL)
+ZMK_COMBO(cut,    &kp LC(DE_X), LB2 LB3, ALL)
+ZMK_COMBO(copy,   &kp LC(DE_C), LB1 LB2, ALL)
+ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
