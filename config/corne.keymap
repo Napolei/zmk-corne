@@ -45,26 +45,25 @@ ZMK_HOLD_TAP(hmr,
 
 
 // combos
-ZMK_COMBO(escape,       &kp ESCAPE,      LT3 LT4, ALL)
 ZMK_COMBO(save,         &kp LC(DE_S),    LM3 LM4, ALL)
 ZMK_COMBO(search,       &kp LC(DE_F),    LM1 LM2, ALL)
 
-ZMK_COMBO(undo,         &kp LC(DE_Z),    RM3 RM4, ALL)
-ZMK_COMBO(redo,         &kp LC(DE_Y),    RB3 RB4, ALL)
+ZMK_COMBO(undo,         &kp LC(DE_Z),    RM0 RM1, ALL)
+ZMK_COMBO(redo,         &kp LC(DE_Y),    LB3 LB4, ALL)
 
 ZMK_COMBO(ctrl_left,    &kp LC(LEFT_ARROW),     RB3 RB4, ALL)
 ZMK_COMBO(ctrl_right,   &kp LC(RIGHT_ARROW),    RB4 RB5, ALL)
 ZMK_COMBO(ctrl_bspc,    &kp LC(BSPC),           RT4 RT5, ALL)
 ZMK_COMBO(ctrl_del,     &kp LC(DELETE),         RM4 RM5, ALL)
 
-ZMK_COMBO(ctrl_alt_del,     &kp LC(LALT)(DELETE),   LT4 LT5, ALL)
-ZMK_COMBO(alt_f4,           &kp LALT(F4),           LT5 RT5, ALL)
+ZMK_COMBO(ctrl_alt_del,     &kp LC(LA(DELETE)),   LT4 LT5, ALL)
+ZMK_COMBO(alt_f4,           &kp LA(F4),           LT5 RT5, ALL)
 
 ZMK_COMBO(cut,    &kp LC(DE_X), LB2 LB3, ALL)
 ZMK_COMBO(copy,   &kp LC(DE_C), LB1 LB2, ALL)
 ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 
-ZMK_COMBO(lock_screen,  &kp LEFT_GUI(DE_L), RM2 RM3, ALL)
+ZMK_COMBO(lock_screen,  &kp LG(DE_L), RM2 RM3, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
