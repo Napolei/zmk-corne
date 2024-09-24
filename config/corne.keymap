@@ -64,7 +64,7 @@ ZMK_COMBO(cut,    &kp LC(DE_X), LB2 LB3, ALL)
 ZMK_COMBO(copy,   &kp LC(DE_C), LB1 LB2, ALL)
 ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 
-ZMK_COMBO(lock_screen,  &kp LEFT_GUI(DE_L), RM2 RM3S, ALL)
+ZMK_COMBO(lock_screen,  &kp LEFT_GUI(DE_L), RM2 RM3, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
