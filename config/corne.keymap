@@ -45,14 +45,26 @@ ZMK_HOLD_TAP(hmr,
 
 
 // combos
-ZMK_COMBO(escape,       &kp ESCAPE, LT3 LT4, ALL)
-ZMK_COMBO(tab,          &kp TAB,    LM3 LM4, ALL)
-ZMK_COMBO(backspace,    &kp BSPC,   RT3 RT4, ALL)
-ZMK_COMBO(delete,       &kp DELETE, RM3 RM4, ALL)
+ZMK_COMBO(escape,       &kp ESCAPE,      LT3 LT4, ALL)
+ZMK_COMBO(save,         &kp LC(DE_S),    LM3 LM4, ALL)
+ZMK_COMBO(search,       &kp LC(DE_F),    LM1 LM2, ALL)
+
+ZMK_COMBO(undo,         &kp LC(DE_Z),    RM3 RM4, ALL)
+ZMK_COMBO(redo,         &kp LC(DE_Y),    RB3 RB4, ALL)
+
+ZMK_COMBO(ctrl_left,    &kp LC(LEFT_ARROW),     RB3 RB4, ALL)
+ZMK_COMBO(ctrl_right,   &kp LC(RIGHT_ARROW),    RB4 RB5, ALL)
+ZMK_COMBO(ctrl_bspc,    &kp LC(BSPC),           RT4 RT5, ALL)
+ZMK_COMBO(ctrl_del,     &kp LC(DELETE),         RM4 RM5, ALL)
+
+ZMK_COMBO(ctrl_alt_del,     &kp LC(LALT(DELETE)),   LT4 LT5, ALL)
+ZMK_COMBO(alt_f4,           &kp LALT(F4)),          LT5 RT5, ALL)
 
 ZMK_COMBO(cut,    &kp LC(DE_X), LB2 LB3, ALL)
 ZMK_COMBO(copy,   &kp LC(DE_C), LB1 LB2, ALL)
 ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
+
+ZMK_COMBO(lock_screen,  &kp LEFT_GUI(DE_L), RM2 RM3S, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
@@ -80,7 +92,7 @@ ZMK_LAYER(number_layer,
 
 ZMK_LAYER(symbol_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
-        ___             &kp DE_SQT          &kp DE_DQT          &kp DE_AMPERSAND    &kp DE_PERCENT      &kp DE_HASH                 &kp DE_EXCL     &kp DE_QUESTION         &kp EQUAL           &kp DE_LPAR         &kp DE_RPAR         ___
+        ___             &kp DE_SQT          &kp DE_DQT          &kp DE_AMPERSAND    &kp DE_PERCENT      &kp DE_HASH                 &kp DE_EXCL     &kp DE_QUESTION         &kp DE_EQUAL        &kp DE_LPAR         &kp DE_RPAR         ___
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
         ___             &hml LGUI DE_AT     &hml LALT DE_EURO   &hml LCTRL DE_DLLR  &hml LSHFT DE_PRCNT &none                       &kp DE_SLASH    &hmr RSHFT DE_BSLH      &hmr LCTRL DE_PIPE  &hmr LALT DE_LBKT   &hmr LGUI DE_RBKT   ___
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
