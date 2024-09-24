@@ -48,7 +48,7 @@ ZMK_HOLD_TAP(hmr,
 ZMK_COMBO(save,         &kp LC(DE_S),    LM3 LM4, ALL)
 ZMK_COMBO(search,       &kp LC(DE_F),    LM1 LM2, ALL)
 
-ZMK_COMBO(undo,         &kp LC(DE_Z),    RM0 RM1, ALL)
+ZMK_COMBO(undo,         &kp LC(DE_Z),    RT0 RT1, ALL)
 ZMK_COMBO(redo,         &kp LC(DE_Y),    LB3 LB4, ALL)
 
 ZMK_COMBO(ctrl_left,    &kp LC(LEFT_ARROW),     RB3 RB4, ALL)
@@ -66,7 +66,7 @@ ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 ZMK_COMBO(lock_screen,  &kp LG(DE_L), RM2 RM3, ALL)
 
 ZMK_LAYER(default_layer,
-//  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
+//  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮ss
         &kp ESCAPE      &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &kp BSPC
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
         &lt NUM TAB     &hml LGUI DE_A      &hml LALT DE_S      &hml LCTRL DE_D     &hml LSHFT DE_F     &kp DE_G                    &kp DE_H        &hmr RSHFT DE_J     &hmr LCTRL DE_K     &hmr LALT DE_L      &hmr LGUI UP_ARROW  &lt NUM DELETE
