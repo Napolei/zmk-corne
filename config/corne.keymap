@@ -21,6 +21,9 @@
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                  // thumbs
+#define PINKY_L LT5 LM5 LB5
+#define PINKY_R RT5 RM5 RB5
+
 
 #undef COMBO_TERM
 #define COMBO_TERM 50
@@ -29,7 +32,7 @@ ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <280>;
     require-prior-idle-ms = <150>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-key-positions = <PINKY_L PINKY_R KEYS_R THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
 )
@@ -38,21 +41,23 @@ ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
     tapping-term-ms = <280>;
     require-prior-idle-ms = <150>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-key-positions = <PINKY_L PINKY_R KEYS_L THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
 )
 
 
 // combos
-ZMK_COMBO(save,         &kp LC(DE_S),    LM3 LM4, ALL)
-ZMK_COMBO(search,       &kp LC(DE_F),    LM1 LM2, ALL)
+ZMK_COMBO(select_all,   &kp LC(DE_A),    LB4 LM4, ALL)
+ZMK_COMBO(save,         &kp LC(DE_S),    LB4 LM4, ALL)
+ZMK_COMBO(search,       &kp LC(DE_F),    LB1 LM1, ALL)
 
-ZMK_COMBO(undo,         &kp LC(DE_Z),    RT0 RT1, ALL)
+ZMK_COMBO(undo,         &kp LC(DE_Z),    RT0 RM0, ALL)
+ZMK_COMBO(undo_2,       &kp LC(DE_Z),    RM5 RT5, ALL)
 ZMK_COMBO(redo,         &kp LC(DE_Y),    LB3 LB4, ALL)
 
-ZMK_COMBO(ctrl_left,    &kp LC(LEFT_ARROW),     RB3 RB4, ALL)
-ZMK_COMBO(ctrl_right,   &kp LC(RIGHT_ARROW),    RB4 RB5, ALL)
+ZMK_COMBO(home,         &kp HOME,               RB3 RB4, ALL)
+ZMK_COMBO(end,          &kp END,                RB4 RB5, ALL)
 ZMK_COMBO(ctrl_bspc,    &kp LC(BSPC),           RT4 RT5, ALL)
 ZMK_COMBO(ctrl_del,     &kp LC(DELETE),         RM4 RM5, ALL)
 
@@ -63,10 +68,17 @@ ZMK_COMBO(cut,    &kp LC(DE_X), LB2 LB3, ALL)
 ZMK_COMBO(copy,   &kp LC(DE_C), LB1 LB2, ALL)
 ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 
-ZMK_COMBO(lock_screen,  &kp LG(DE_L), RM2 RM3, ALL)
+// ZMK_COMBO(lock_screen,  &kp LG(DE_L), RM2 RM3, ALL)
+
+// jetbrains
+ZMK_COMBO(ctrl_q,       &kp LC(DE_Q),        LM4 LT4, ALL)
+ZMK_COMBO(ctrl_p,       &kp LC(DE_P),        RM4 RT4, ALL)
+ZMK_COMBO(ctrl_alt_o,   &kp LC(LA(DE_O)),    RM3 RT3, ALL)
+ZMK_COMBO(ctrl_alt_l,   &kp LC(LA(DE_L)),    RB3 RM3, ALL)
+ZMK_COMBO(comment,      &kp LC(DE_SLASH),    RB5 RM5, ALL)
 
 ZMK_LAYER(default_layer,
-//  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮ss
+//  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
         &kp ESCAPE      &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &kp BSPC
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
         &lt NUM TAB     &hml LGUI DE_A      &hml LALT DE_S      &hml LCTRL DE_D     &hml LSHFT DE_F     &kp DE_G                    &kp DE_H        &hmr RSHFT DE_J     &hmr LCTRL DE_K     &hmr LALT DE_L      &hmr LGUI UP_ARROW  &lt NUM DELETE
