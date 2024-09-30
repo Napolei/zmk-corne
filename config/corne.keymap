@@ -49,7 +49,7 @@ ZMK_HOLD_TAP(hmr,
 
 // combos
 ZMK_COMBO(select_all,   &kp LC(DE_A),    LB4 LM4, ALL)
-ZMK_COMBO(save,         &kp LC(DE_S),    LB4 LM4, ALL)
+ZMK_COMBO(save,         &kp LC(DE_S),    LB3 LM3, ALL)
 ZMK_COMBO(search,       &kp LC(DE_F),    LB1 LM1, ALL)
 
 ZMK_COMBO(undo,         &kp LC(DE_Z),    RT0 RM0, ALL)
@@ -71,11 +71,11 @@ ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 // ZMK_COMBO(lock_screen,  &kp LG(DE_L), RM2 RM3, ALL)
 
 // jetbrains
-ZMK_COMBO(ctrl_q,       &kp LC(DE_Q),        LM4 LT4, ALL)
-ZMK_COMBO(ctrl_p,       &kp LC(DE_P),        RM4 RT4, ALL)
-ZMK_COMBO(ctrl_alt_o,   &kp LC(LA(DE_O)),    RM3 RT3, ALL)
-ZMK_COMBO(ctrl_alt_l,   &kp LC(LA(DE_L)),    RB3 RM3, ALL)
-ZMK_COMBO(comment,      &kp LC(DE_SLASH),    RB5 RM5, ALL)
+ZMK_COMBO(ctrl_q,       &kp LC(DE_Q),       LM4 LT4, ALL)
+ZMK_COMBO(ctrl_p,       &kp LC(DE_P),       RM4 RT4, ALL)
+ZMK_COMBO(ctrl_alt_o,   &kp LC(LA(DE_O)),   RM3 RT3, ALL)
+ZMK_COMBO(ctrl_alt_l,   &kp LC(LA(DE_L)),   RB3 RM3, ALL)
+ZMK_COMBO(comment,      &kp LC(KP_DIVIDE),  RB5 RM5, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
