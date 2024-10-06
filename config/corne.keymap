@@ -28,7 +28,7 @@
 #undef COMBO_TERM
 #define COMBO_TERM 50
 
-define TAPPING_TERM_MS 150
+#define TAPPING_TERM_MS 150
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
