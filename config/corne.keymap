@@ -29,11 +29,12 @@
 #define COMBO_TERM 50
 
 #define TAPPING_TERM_MS 220
+#define PRIOR_IDLE_MS 1000
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <TAPPING_TERM_MS>;
-    require-prior-idle-ms = <150>;
+    require-prior-idle-ms = <PRIOR_IDLE_MS>;
     hold-trigger-key-positions = <PINKY_L PINKY_R KEYS_R THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
@@ -42,7 +43,7 @@ ZMK_HOLD_TAP(hml,
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
     tapping-term-ms = <TAPPING_TERM_MS>;
-    require-prior-idle-ms = <150>;
+    require-prior-idle-ms = <PRIOR_IDLE_MS>;
     hold-trigger-key-positions = <PINKY_L PINKY_R KEYS_L THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
@@ -79,6 +80,7 @@ ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 // jetbrains
 ZMK_COMBO(ctrl_q,       &kp LC(DE_Q),       LM4 LT4, ALL)
 ZMK_COMBO(ctrl_p,       &kp LC(DE_P),       RM4 RT4, ALL)
+ZMK_COMBO(ctrl_d,       &kp LC(DE_D),       LM2 LT2, ALL)
 ZMK_COMBO(ctrl_r,       &kp LC(DE_R),       LM1 LT1, ALL)
 ZMK_COMBO(ctrl_t,       &kp LC(DE_T),       LM0 LT0, ALL)
 ZMK_COMBO(ctrl_alt_o,   &kp LC(LA(DE_O)),   RM3 RT3, ALL)
