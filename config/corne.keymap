@@ -29,7 +29,7 @@
 #define COMBO_TERM 50
 
 #define TAPPING_TERM_MS 220
-#define PRIOR_IDLE_MS 1000
+#define PRIOR_IDLE_MS 250
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
