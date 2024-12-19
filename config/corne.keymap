@@ -80,7 +80,7 @@ ZMK_COMBO(paste,  &kp LC(DE_V), LB0 LB1, ALL)
 // jetbrains
 ZMK_COMBO(ctrl_q,       &kp LC(DE_Q),       LM4 LT4, ALL)
 ZMK_COMBO(ctrl_p,       &kp LC(DE_P),       RM4 RT4, ALL)
-ZMK_COMBO(ctrl_d,       &kp LC(DE_D),       LM2 LT2, ALL)
+ZMK_COMBO(ctrl_d,       &kp LC(DE_D),       LM2 LB2, ALL)
 ZMK_COMBO(ctrl_r,       &kp LC(DE_R),       LM1 LT1, ALL)
 ZMK_COMBO(ctrl_t,       &kp LC(DE_T),       LM0 LT0, ALL)
 ZMK_COMBO(ctrl_alt_o,   &kp LC(LA(DE_O)),   RM3 RT3, ALL)
@@ -89,7 +89,7 @@ ZMK_COMBO(comment,      &kp LC(KP_DIVIDE),  RB5 RM5, ALL)
 
 ZMK_LAYER(default_layer,
 //  ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮        ╭─────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────┬─────────────────╮
-        &lt FUN ESCAPE  &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &kp BSPC
+        &lt SYM ESCAPE  &kp DE_Q            &kp DE_W            &kp DE_E            &kp DE_R            &kp DE_T                    &kp DE_Z        &kp DE_U            &kp DE_I            &kp DE_O            &kp DE_P            &kp BSPC
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
         &lt NUM TAB     &hml LGUI DE_A      &hml LALT DE_S      &hml LCTRL DE_D     &hml LSHFT DE_F     &kp DE_G                    &kp DE_H        &hmr RSHFT DE_J     &hmr LCTRL DE_K     &hmr LALT DE_L      &hmr LGUI UP_ARROW  &lt NUM DELETE
 //  ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤        ├─────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────┼─────────────────┤
