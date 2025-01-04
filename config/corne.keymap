@@ -60,13 +60,15 @@ ZMK_COMBO(search,       &kp LC(DE_F),    LB1 LM1, ALL)
 
 ZMK_COMBO(undo,         &kp LC(DE_Z),    RT0 RM0, ALL)
 ZMK_COMBO(undo_2,       &kp LC(DE_Z),    RM5 RT5, ALL)
-ZMK_COMBO(undo_3,       &kp LC(DE_Z),    LT0 LT1, ALL)
 ZMK_COMBO(redo,         &kp LC(DE_Y),    LB3 LB4, ALL)
 
-ZMK_COMBO(home,         &kp HOME,               RB3 RB4, ALL)
-ZMK_COMBO(end,          &kp END,                RB4 RB5, ALL)
-ZMK_COMBO(ctrl_bspc,    &kp LC(BSPC),           RT4 RT5, ALL)
-ZMK_COMBO(ctrl_del,     &kp LC(DELETE),         RM4 RM5, ALL)
+ZMK_COMBO(home,         &kp HOME,        RB3 RB4, ALL)
+ZMK_COMBO(end,          &kp END,         RB4 RB5, ALL)
+
+ZMK_COMBO(backspace,    &kp BSPC,        LT0 LT1, ALL)
+ZMK_COMBO(delete,       &kp DELETE,      LM0 LM1, ALL)
+ZMK_COMBO(ctrl_bspc,    &kp LC(BSPC),    RT4 RT5, ALL)
+ZMK_COMBO(ctrl_del,     &kp LC(DELETE),  RM4 RM5, ALL)
 
 ZMK_COMBO(ctrl_alt_del,     &kp LC(LA(DELETE)),   LT4 LT5, ALL)
 ZMK_COMBO(alt_f4,           &kp LA(F4),           LT5 RT5, ALL)
