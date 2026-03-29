@@ -11,6 +11,8 @@
 #include "zmk-helpers/unicode-chars/german.dtsi"
 #include "zmk-helpers/unicode-chars/french.dtsi"
 
+#include "corne.dtsi"
+
 #define ___ &trans
 
 #define DEF 0
