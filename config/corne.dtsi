@@ -16,7 +16,7 @@
 &foostan_corne_5col_layout {
     transform = <&five_column_transform>;
 };
-aaa
+
 / {
     chosen {
         zephyr,display = &oled;
